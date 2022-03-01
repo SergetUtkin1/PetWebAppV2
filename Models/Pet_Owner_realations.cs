@@ -22,6 +22,5 @@ namespace PetWebApp.Models
             get { return owner_id; }
             set { owner_id = value; }
         }
-
     }
 }
