@@ -1,9 +1,17 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Собаки";
 }
 
-<table class ="table table-bordered">
-    <tr>
-        <th></th>
-    </tr>
+<h1> Собаки </h1>
+<table class="table table-bordered table-striped">
+    @foreach (var b in ViewBag.PetsInfo)
+    {
+        <tr>
+            <th>@b.Name</th>
+            <th>@b.Breed</th>
+            <th>@b.Birthdate.Date</th>
+            <th>@b.Count_of_medal</th>
+        </tr>
+    }
+
 </table>

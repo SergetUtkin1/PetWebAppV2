@@ -1,11 +1,9 @@
-﻿using System;
+﻿using PetWebApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Data;
-using System.Data.Sql;
-using System.Data.SqlClient;
 
 namespace PetWebApp.Controllers
 {
@@ -13,18 +11,8 @@ namespace PetWebApp.Controllers
     {
         public ActionResult Index()
         {
-            int count = 0;
-            string connectionStrings = @"Data Source = DESKTOP-HTFQFDI;initial catalog=petdb;integrated security=True";
-            SqlConnection cnn = new SqlConnection(connectionStrings);
-            cnn.Open();
-            SqlCommand command = new SqlCommand("SELECT * FROM PetInfo", cnn);
-            SqlDataReader dataReader = command.ExecuteReader();
-            while(dataReader.Read())
-            {
-                
-            }
-            cnn.Close();
-            ViewBag.Cnt = count;
+            PetDbContext dbContext = new PetDbContext();
+            ViewBag.PetsInfo = dbContext.ListofPetsInfo;
             return View();
         }
 

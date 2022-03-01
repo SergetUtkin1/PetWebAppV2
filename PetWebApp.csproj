@@ -125,6 +125,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Owners.cs" />
+    <Compile Include="Models\PetDbContext.cs" />
     <Compile Include="Models\PetInfo.cs" />
     <Compile Include="Models\Pet_Owner_realations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -9,7 +9,7 @@ namespace PetWebApp.Models
     {
         private string name, breed = "Не указано";
         private int id, count_of_medal;
-        private DateTimeOffset birthdate;
+        private DateTime birthdate;
 
         public string Name 
         { 
@@ -35,7 +35,7 @@ namespace PetWebApp.Models
             set { count_of_medal = value; }
         }
 
-        public DateTimeOffset Birthdate
+        public DateTime Birthdate
         {
             get { return birthdate; }
             set { birthdate = value; }
