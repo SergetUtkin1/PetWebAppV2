@@ -1,7 +1,16 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Хозяева Собак";
 }
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Имя</th>
+    </tr>
+    @foreach (var x in ViewBag.Owners)
+    {
+        <tr>
+            <th>@x.Name</th>
+        </tr>
+    }
+</table>

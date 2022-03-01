@@ -9,25 +9,30 @@ namespace PetWebApp.Controllers
 {
     public class HomeController : Controller
     {
+        PetDbContext dbContext = new PetDbContext();
         public ActionResult Index()
         {
-            PetDbContext dbContext = new PetDbContext();
             ViewBag.PetsInfo = dbContext.ListofPetsInfo;
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
+            ViewBag.Owners = dbContext.ListOfOwners;
             return View();
         }
 
+        [HttpGet]
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
+        }
+
+        [HttpPost]
+        public string Contact(PetInfo petInfo)
+        {
+            dbContext.AddNewPet(petInfo);
+            return "Вы добавили собаку " + petInfo.Name;
         }
     }
 }

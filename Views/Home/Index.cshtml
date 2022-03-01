@@ -4,12 +4,18 @@
 
 <h1> Собаки </h1>
 <table class="table table-bordered table-striped">
+    <tr>
+        <th>Имя</th>
+        <th>Порода</th>
+        <th>Дата рождения</th>
+        <th>Кол-во Медалей</th>
+    </tr>
     @foreach (var b in ViewBag.PetsInfo)
     {
         <tr>
             <th>@b.Name</th>
             <th>@b.Breed</th>
-            <th>@b.Birthdate.Date</th>
+            <th>@b.Birthdate</th>
             <th>@b.Count_of_medal</th>
         </tr>
     }

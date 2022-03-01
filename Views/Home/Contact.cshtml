@@ -1,17 +1,34 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Добавить Собаку";
 }
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+  <h3>Добавление собаки</h3>
+    <form method="post" action="">
+        <table>
+            <tr>
+                <td><p>Введите кличку </p></td>
+                <td><input type="text" name="Name" /> </td>
+            </tr>
+            <tr>
+                <td><p>Введите породу :</p></td>
+                <td>
+                    <input type="text" name="Breed" />
+                </td>
+            </tr>
+            <tr>
+                <td><p>Введите дату рождения :</p></td>
+                <td>
+                    <input type="date" name="Birthdate" />
+                </td>
+            </tr>
+            <tr>
+                <td><p>Введите кол-во медалей :</p></td>
+                <td>
+                    <input type="number" name="Count_of_medal" />
+                </td>
+            </tr>
+            <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
+        </table>
+    </form>  

@@ -9,7 +9,7 @@ namespace PetWebApp.Models
     {
         private string name, breed = "Не указано";
         private int id, count_of_medal;
-        private DateTime birthdate;
+        private DateTime birthdate = DateTime.Now;
 
         public string Name 
         { 

@@ -92,5 +92,22 @@ namespace PetWebApp.Models
 
             return mList;
         }
+
+        public void AddNewPet(PetInfo pet)
+        {
+            SqlConnection cnn = new SqlConnection(WebConfigurationManager.ConnectionStrings["myConStr"].ConnectionString);
+            SqlCommand command = new SqlCommand();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            cnn.Open();
+            String sql = $"INSERT INTO PetInfo (name, breed, birthdate, count_of_medal) VALUES('{pet.Name}', '{pet.Breed}', '{pet.Birthdate.ToString()}', {pet.Count_of_medal.ToString()})";
+
+            command = new SqlCommand(sql, cnn);
+            
+            adapter.InsertCommand = new SqlCommand(sql, cnn);
+            adapter.InsertCommand.ExecuteNonQuery();
+
+            command.Dispose();
+            cnn.Close();
+        }
     }
 }
